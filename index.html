@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UHCS Microstructure Classifier</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">
+    <h1>UHCS Microstructure Classifier</h1>
+    <p>Upload an SEM micrograph to identify its primary microconstituent.</p>
+  </div>
+
+  <div id="app">
+    <div id="upload-area">
+      <input type="file" id="file-input" accept="image/*" hidden>
+      <label for="file-input" id="drop-label">
+        <span>Click or drag an image here</span>
+      </label>
+      <img id="preview" hidden>
+    </div>
+
+    <button id="analyze-btn" disabled>Analyze micrograph</button>
+    <p id="status">Loading model...</p>
+
+    <div id="results-card" hidden>
+      <h2>Predicted primary microconstituent</h2>
+      <div id="results-list"></div>
+    </div>
+  </div>
+
+  <div id="footer-note">
+    <strong>Note:</strong> This tool identifies microstructure only. Wait until the model loads; once it's ready, you can analyze the micrograph.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
