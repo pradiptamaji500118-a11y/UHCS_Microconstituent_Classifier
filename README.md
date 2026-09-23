@@ -118,7 +118,6 @@ the app itself).
 └── README.md
 ```
 
-*(Adjust this section if your actual folder layout differs.)*
 
 ---
 
